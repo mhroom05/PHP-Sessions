@@ -49,7 +49,7 @@ if (isset($_POST['product'])) {
 // Calculate total price
 $totalPrice = 0;
 foreach ($_SESSION['cart'] as $item => $qty) {
-    $totalPrice = $products[$item]['price'] * $qty; 
+    $totalPrice += $products[$item]['price'] * $qty; 
 }
 ?>
 
