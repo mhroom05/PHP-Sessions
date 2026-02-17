@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-if (isset($_POST['username'])) {
-    $_SESSION['user'] = $_POST['username'];
-    $_SESSION['user'] = $_POST['password'];
-    $_SESSION['cart'] = [];
+if (isset($_POST['username'], $_POST['password'])) {
+    $_SESSION['user'] = trim($_POST['username']); // guardar username correctamente
+    $_SESSION['cart'] = []; // reinicia carrito al login
     header("Location: shop.php");
     exit;
 }
